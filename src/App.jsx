@@ -183,7 +183,13 @@ export default function App() {
 
   async function googleSignIn() {
     if (!isSupabaseConfigured || !supabase) { notify('Google sign-in works after the Supabase auth service is configured.'); return }
-    const { error } = await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin } })
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin,
+        queryParams: { prompt: 'select_account' },
+      },
+    })
     if (error) notify(error.message)
   }
 
