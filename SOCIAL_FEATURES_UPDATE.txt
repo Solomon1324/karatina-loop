@@ -1,0 +1,16 @@
+KARATINA LOOP — SOCIAL FEATURES
+
+Groups
+- Group posts support text, photos, emojis, stickers, comments and reactions.
+- Live chat supports photos, emojis, stickers, public replies to a specific message and private replies linked to a message.
+- Authors can remove their own posts/messages/comments and photos. Group admins/site admins can moderate the applicable content.
+- Drafts containing stickers show a Remove stickers option.
+
+Businesses and Campus Info
+- Listings/information cards support uploaded photos, emoji/sticker text, comments, comment photos and reactions.
+- Authors can delete their own comments and remove photos from their own submitted content. Site admins can moderate as allowed by the database rules.
+- Uploaded photos use contain sizing to preserve the full image in the available card/frame.
+
+Security
+- Supabase Row Level Security enforces access rules. Front-end buttons are not the security boundary; the database policies are.
+- The ZIP does not include `.env` or any Supabase secret key.

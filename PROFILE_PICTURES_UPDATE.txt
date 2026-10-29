@@ -1,0 +1,21 @@
+KARATINA LOOP — PROFILE PICTURES UPDATE
+
+Included in this version
+- My Profile dialog for editing your display name and profile picture.
+- ProfileAvatar component that displays a student's uploaded picture, or their initial if no picture is set.
+- Group post, comment, and live-chat avatars.
+- Business and Campus Info contributor avatars and comment avatars.
+
+Supabase requirements
+- The public.profiles table must contain id, display_name, and avatar_url.
+- Profile editing requires the existing trigger-created profile row and permission for authenticated users to update their own row.
+- Avatar uploads use a public Storage bucket named profile-avatars with authenticated upload/delete policies restricting each user to their own user-id folder. The application enforces the 5 MB file limit and accepts JPG, PNG, WebP, or GIF.
+- Apply `supabase/migrations/20261029000400_profile_avatar_storage.sql` before using profile-picture uploads. This ZIP had no profile-avatar migration even though the UI required the bucket and policies; the fresh copy now includes one.
+
+Security and configuration
+- Keep the local `.env` file private and out of GitHub. The uploaded ZIP unexpectedly contained a `.env`; it was excluded from the review copy and is not in the public source files.
+- Keep your previous working project until you have tested this extracted copy.
+
+Testing
+- The edited JavaScript/JSX source files were parsed for syntax successfully.
+- A full production bundle was not generated in this Linux environment because the saved dependency folder contains Windows-only Rollup binaries. On your Windows computer, run `pnpm install` and then `pnpm build` from the folder containing package.json.

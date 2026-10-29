@@ -1,0 +1,22 @@
+KARATINA LOOP — COMPLETE PROFILE AND GROUP ADMIN UPDATE
+
+Use this as a NEW test copy first. Keep your existing working folder untouched.
+
+1. Extract this ZIP into a new folder.
+2. Open the extracted `karatina-loop` folder (the one containing package.json).
+3. Click the File Explorer address bar, type `cmd`, and press Enter.
+4. Run `pnpm install` and wait for it to finish.
+5. Run `pnpm build`. Continue only when the build completes successfully.
+6. Run `pnpm dev` and open the Local URL printed in the black window.
+
+WHAT IS INCLUDED
+- My Profile controls to edit the saved display name, replace a profile picture, and remove a profile picture.
+- A Group admin tab for an active group admin to transfer the admin role to another approved member.
+- A Leave group action. If the group admin leaves without transferring the role, there is no automatic promotion; only the main site admin can appoint the next group admin.
+- Main site admin controls to appoint or replace the group admin.
+- Existing group posts, chat, photos, reactions, comments, and the other project sections from this project version.
+
+IMPORTANT — SUPABASE DATABASE UPDATE
+The site includes many migrations. For a new Supabase project, use the complete ordered list in `SUPABASE_SETUP.md`. For an existing project, check what is installed and apply only missing migrations. Do not assume the ZIP notes match your database. SQL migrations are never run automatically by `pnpm install` or `pnpm build`.
+
+Keep `.env` private and out of GitHub. Never add a service-role key or private secret to a `VITE_` variable.

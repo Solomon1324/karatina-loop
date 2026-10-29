@@ -1,0 +1,19 @@
+KARATINA LOOP — COMPLETE SOCIAL AND CHAT UPDATE
+
+Included in this complete project ZIP:
+- Fit uploaded group, chat, comment, business and campus photos inside their frames without stretching or unnecessary cropping.
+- Reply publicly to a specific live-chat message, with the original message shown as context.
+- Send private replies associated with a specific group-chat message. Private replies are restricted by Supabase RLS to the sender and recipient; both users must be approved group members.
+- Delete your own group posts and chat messages; group admins and site admins can moderate group content.
+- Delete your own group comments; group admins and site admins can moderate comments.
+- Remove an uploaded photo from a post, message or comment while retaining its text, when text remains. For photo-only content, delete the item instead so the database does not keep an empty post/comment/message.
+- Delete your own business/campus comments and remove photos from your own submitted listing or campus information card. Site admins can moderate these photos/comments.
+- A Remove stickers control appears in drafts containing stickers, so users can remove sticker tokens before posting. Published items with unwanted stickers can be deleted using their content delete control.
+- Live data events notify open group dialogs when posts/messages/comments/reactions change or are deleted.
+- This fresh project copy is separate from the previous working folder; the supplied installer was not included.
+
+SAFETY NOTES
+- The uploaded ZIP unexpectedly contained `.env`; it was excluded from the safe review copy. The fresh copy uses the same local Supabase project configuration, and `.env` remains ignored by Git.
+- Never share or publish a Supabase secret/service_role key.
+- Photo-only comments/posts/messages cannot have the photo detached while leaving an empty row; delete that item instead.
+- Do not assume any migrations are already applied based on ZIP notes; verify the current project and apply only missing migrations.

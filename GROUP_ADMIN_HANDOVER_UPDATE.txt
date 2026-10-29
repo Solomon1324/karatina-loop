@@ -1,0 +1,31 @@
+KARATINA LOOP — GROUP ADMIN HANDOVER
+
+This update adds group-admin selection and safe recovery when a group admin leaves.
+
+HOW IT WORKS
+- A current group admin can open a group's “Group admin” tab and transfer the role to another approved member. The chosen member becomes the sole group admin; the previous admin becomes a regular member.
+- If the current group admin leaves before appointing someone, no member is promoted automatically. Only the main Karatina Loop site admin can appoint the replacement.
+- The main site admin can appoint or replace the group admin at any time.
+- Only approved members can be appointed. Database permissions enforce these rules; the buttons alone do not provide the security.
+- Members can use “Leave group”. Leaving as the group admin makes the group available for main-site-admin recovery.
+
+IMPORTANT — APPLY THE DATABASE MIGRATION ONCE
+The ZIP contains:
+supabase/migrations/20261031000100_group_admin_handover.sql
+
+The SQL file must be applied to the connected Karatina Loop Supabase project before testing admin assignment or leaving a group:
+1. Open the Karatina Loop project in Supabase.
+2. Open SQL Editor and create a new query.
+3. Open the SQL file listed above in this extracted project folder, copy its entire contents, and paste them into the SQL Editor.
+4. Run the query once and confirm Supabase reports success.
+
+Do not run the same migration repeatedly unless you have a specific reason to. If Supabase reports an error, stop and keep the exact error text for troubleshooting.
+
+TESTING
+1. Run `pnpm install` in the extracted `karatina-loop` folder.
+2. Run `pnpm build` and confirm it completes successfully.
+3. Run `pnpm dev` and open the local URL printed in the terminal.
+4. Sign in as a current group admin and test transferring the role to another approved member.
+5. Separately test the main site admin recovery path on a test group with no active group admin.
+
+Keep your previously working folder untouched until the new copy has been tested.

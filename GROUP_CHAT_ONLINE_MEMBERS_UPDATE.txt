@@ -1,0 +1,18 @@
+KARATINA LOOP — GROUP CHAT ONLINE MEMBERS
+
+This update adds a live online-member list to Live chat. It tracks a member while an approved member has that group's Live chat open and removes their presence when they leave the chat or close it. It displays up to eight names and avatars plus a count for any additional online members.
+
+REQUIRED SUPABASE MIGRATION
+
+Apply this SQL migration to the Karatina Loop Supabase project before testing the new online indicator:
+supabase/migrations/20261028093000_group_chat_presence.sql
+
+The policy permits only authenticated, approved members of an approved group to publish and receive presence on the private group-chat-presence:<group UUID> topic. It does not expose presence to anonymous users or non-members.
+
+TEST
+
+1. Start the updated app and sign in with two approved member accounts in separate browsers or browser profiles.
+2. Open the same approved group with both accounts and open Live chat on both.
+3. Each should appear in the online-member list within a short moment.
+4. Close Live chat or leave the group with one account; that account should disappear from the list.
+5. Check the browser console if the status says the presence migration is missing or online status is unavailable.

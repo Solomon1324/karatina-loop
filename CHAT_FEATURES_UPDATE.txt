@@ -1,0 +1,20 @@
+KARATINA LOOP — CHAT, PHOTO AND CONTENT CONTROLS UPDATE
+
+- Uploaded photos in group posts, comments, messages, business listings and campus information fit inside their display frames without stretching. The full photo is preserved with contain sizing.
+- Live group chat supports public replies linked to a specific earlier message, and shows the referenced message above the reply.
+- Approved group members can open private replies linked to a specific public chat message. Private rows use Supabase row-level security so only the sender and recipient can read them. Both users need approved group membership in the same approved group.
+- Users can delete their own group posts, comments and chat messages. Group admins and site admins can moderate group content under database policies.
+- Users can remove photos from their own text-containing posts, comments and messages while retaining the text. Photo-only items should be deleted rather than left empty.
+- Users can delete their own business/campus comments, remove photos from their own submitted listing/information card, and remove photos from their own comments while retaining text. Site admins can moderate where allowed by database policies.
+- Composer areas show a Remove stickers option whenever stickers are present in the draft. This strips sticker tokens while keeping the rest of the draft text. For stickers in already-published group content, use the available delete controls to remove the containing item.
+- Live group chat listens for row updates/deletes, so open group dialogs refresh when content is removed.
+
+Database migrations bundled with this update:
+- 20261027083456_advanced_group_chat.sql
+- 20261027083951_advanced_chat_reply_index.sql
+- 20261027090000_content_removal_controls.sql
+- 20261027090500_group_content_delete_realtime.sql
+
+The ZIP's statement that migrations were already applied is not proof of the current database state. Check each migration against the actual Supabase project and apply only missing migrations. Do not run the included update installer; it was removed from the fresh copy because it targets a Downloads folder and can overwrite another project.
+
+The uploaded ZIP unexpectedly contained a `.env` file. It was excluded from the review copy. Keep the local `.env` ignored by Git and never commit any service-role/secret key.
